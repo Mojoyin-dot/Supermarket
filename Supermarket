@@ -1,0 +1,16 @@
+let cart = [];
+let totalPrice = 0;
+
+function addToCart(item, price) {
+    cart.push({ item, price });
+    totalPrice += price;
+
+    const cartItems = document.getElementById("cart-items");
+    const totalPriceElement = document.getElementById("total-price");
+
+    const li = document.createElement("li");
+    li.textContent = `${item} - $${price}`;
+    cartItems.appendChild(li);
+
+    totalPriceElement.textContent = totalPrice.toFixed(2);
+}
